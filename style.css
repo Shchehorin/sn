@@ -23,7 +23,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  height: 54px;
+  height: 54px; /* <-- нова висота */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,10 +40,10 @@ body {
 .logo-box {
   background: rgba(255, 22, 22, 0.2);
   color: #fff;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 12px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   white-space: nowrap;
 }
 
@@ -51,13 +51,15 @@ body {
 .header-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px; /* <-- збільшено */
   flex-shrink: 0;
 }
 
 .header-icons a svg {
   transition: transform 0.2s ease;
   display: block;
+  width: 24px;  /* <-- новий розмір */
+  height: 24px;
 }
 
 .header-icons a:hover svg {
@@ -129,11 +131,17 @@ iframe {
 
 /* Адаптація для мобільних */
 @media (max-width: 420px) {
-  .header-icons {
-    gap: 6px;
-  }
   .glass-header {
-    padding: 0 8px;
+    padding: 0 10px;
+  }
+
+  .header-icons {
+    gap: 10px;
+  }
+
+  .header-icons a svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
