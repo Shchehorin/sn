@@ -1,6 +1,98 @@
+/* Define CSS variables for themes */
+:root {
+    /* Light theme by default */
+    --bg-color: #f0f2f5; /* Very light gray */
+    --card-bg-color: #ffffff; /* White */
+    --text-color: #1c1c1e; /* Almost black */
+    --secondary-text-color: #6c757d; /* Gray */
+    --primary-color: #007aff; /* iOS blue */
+    --border-color: #e0e0e0; /* Light gray for borders */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Soft shadow */
+    --header-bg-color: #ffffff; /* White for header */
+    --footer-bg-color: #ffffff; /* White for footer */
+}
+
+.dark-theme {
+    /* Dark theme */
+    --bg-color: #1c1c1e; /* Dark gray */
+    --card-bg-color: #2c2c2e; /* Even darker gray */
+    --text-color: #f0f2f5; /* Very light gray */
+    --secondary-text-color: #adb5bd; /* Light gray */
+    --primary-color: #0a84ff; /* Brighter iOS blue */
+    --border-color: #3a3a3c; /* Darker gray for borders */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    --header-bg-color: #2c2c2e; /* Darker gray for header */
+    --footer-bg-color: #2c2c2e; /* Darker gray for footer */
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 40px;
-  background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header, .footer {
+    background-color: var(--header-bg-color);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color); /* Keep the same color, but can add slight darkening */
+    opacity: 0.9;
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+/* Styles for theme toggle */
+#theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+    transition: color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Additional styles for iOS-like elements */
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    border-radius: 12px; /* More rounded corners */
+    padding: 1.5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field {
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2); /* iOS-like focus */
 }
