@@ -36,27 +36,27 @@
     <!-- Header - Mobile-first design: Hamburger menu visible by default, desktop nav hidden -->
     <!-- Додано клас 'glass-header' для ефекту скла -->
     <header class="header glass-header py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
-        <!-- Логотип або назва компанії в боксі з прозорістю -->
-        <a href="#home" class="flex items-center space-x-2 p-2 rounded-lg bg-custom-accent/50 backdrop-blur-sm">
-            <i class="fas fa-tire text-white text-3xl"></i> <!-- Іконка шини -->
-            <span class="text-2xl font-semibold text-white">Шиномонтаж</span> <!-- Назва сайту -->
+        <!-- Логотип/назва компанії в боксі акцентного кольору -->
+        <a href="#home" class="flex items-center space-x-2 px-4 py-2 rounded-xl bg-custom-accent shadow-lg">
+            <i class="fas fa-clock text-white text-2xl"></i> <!-- Іконка годинника (як '24/7') -->
+            <span class="text-xl font-semibold text-white">Шиномонтаж</span> <!-- Назва сайту -->
         </a>
 
-        <div class="flex items-center space-x-4">
-            <!-- Навігація для десктопу (прихована на мобільних) -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#home" class="text-lg font-medium text-white hover:text-gray-200 transition-colors">Головна</a>
-                <a href="#branches" class="text-lg font-medium text-white hover:text-gray-200 transition-colors">Філіали</a>
-                <!-- Додайте інші посилання, коли будуть відповідні секції -->
-            </nav>
+        <div class="flex items-center space-x-6">
+            <!-- Іконки для десктопу (видимі на десктопі, приховані на мобільних) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fas fa-phone-alt"></i></a>
+                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fas fa-calendar-alt"></i></a>
+            </div>
 
             <!-- Перемикач теми -->
-            <button id="theme-toggle" class="focus:outline-none text-white hover:text-gray-200">
-                <i class="fas fa-moon"></i> <!-- Іконка місяця за замовчуванням (темна тема) -->
+            <button id="theme-toggle" class="focus:outline-none text-custom-accent hover:text-custom-accent-darker text-2xl">
+                <i class="fas fa-moon"></i>
             </button>
 
             <!-- Кнопка для мобільного меню (видима на мобільних, прихована на десктопі) -->
-            <button id="mobile-menu-button" class="md:hidden text-white text-2xl focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-custom-accent text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -66,9 +66,12 @@
     <!-- Фон мобільного меню також зробимо напівпрозорим, щоб відповідати хедеру -->
     <div id="mobile-menu" class="hidden md:hidden bg-header-bg-color/90 backdrop-blur-sm shadow-lg py-4 px-6 border-b border-gray-200 dark:border-gray-700">
         <nav class="flex flex-col space-y-3">
-            <a href="#home" class="text-lg font-medium text-white hover:text-gray-200 transition-colors py-2">Головна</a>
-            <a href="#branches" class="text-lg font-medium text-white hover:text-gray-200 transition-colors py-2">Філіали</a>
-            <!-- Додайте інші посилання для мобільного меню -->
+            <a href="#home" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2">Головна</a>
+            <a href="#branches" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2">Філіали</a>
+            <!-- Додаємо іконки до мобільного меню як посилання -->
+            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fas fa-phone-alt mr-2"></i>Телефон</a>
+            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fas fa-calendar-alt mr-2"></i>Запис</a>
         </nav>
     </div>
 
@@ -184,9 +187,5 @@
             });
         });
     </script>
-</body>
-</html>
-
-
 </body>
 </html>
