@@ -51,15 +51,15 @@ body {
 .header-icons {
   display: flex;
   align-items: center;
-  gap: 16px; /* <-- збільшено */
+  gap: 20px; /* <-- збільшено */
   flex-shrink: 0;
 }
 
 .header-icons a svg {
   transition: transform 0.2s ease;
   display: block;
-  width: 24px;  /* <-- новий розмір */
-  height: 24px;
+  width: 28px;  /* <-- новий розмір */
+  height: 28px;
 }
 
 .header-icons a:hover svg {
@@ -140,8 +140,8 @@ iframe {
   }
 
   .header-icons a svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 }
 .logo-box {
@@ -151,8 +151,8 @@ iframe {
 }
 
 .logo-box .logo-icon {
-  width: 1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   stroke: #fff;
   flex-shrink: 0;
 }
