@@ -1,158 +1,57 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Шиномонтаж | iOS Стиль</title>
-    <!-- Підключення Tailwind CSS з CDN та кастомною конфігурацією -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'custom-bg': '#1c1c1e',
-                        'custom-text': '#fff',
-                        'custom-accent': '#ff3b30',
-                        'custom-accent-darker': '#cc2a22',
-                        'custom-gray': '#2c2c2e',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Встановлюємо Inter як основний шрифт
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Підключення Font Awesome для іконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Підключення шрифту Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Підключення зовнішнього CSS файлу -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шиномонтаж 24/7</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="min-h-screen flex flex-col">
+<body>
+  <header class="ios-header">
+    <div class="site-title">🔧 Шиномонтаж 24/7</div>
+    <nav>
+      <a href="#services">Послуги</a>
+      <a href="#appointment">Запис</a>
+      <a href="#location">Карта</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+  </header>
 
-    <!-- Header - Компактний дизайн з іконками праворуч -->
-    <!-- Додано клас 'shadow-lg' для тіні -->
-    <header class="header glass-header py-3 px-4 flex justify-between items-center sticky top-0 z-50 shadow-lg">
-        <!-- Логотип/назва компанії в боксі акцентного кольору (темнішого з прозорістю 50%) -->
-        <a href="#home" class="flex items-center space-x-1.5 px-3 py-1 rounded-lg bg-custom-accent-darker/50 shadow-md">
-            <i class="fas fa-clock text-white text-xl"></i> <!-- Іконка годинника -->
-            <span class="text-lg font-semibold text-white">Шиномонтаж</span> <!-- Назва сайту -->
-        </a>
+  <main>
+    <section class="ios-section" id="services">
+      <h2>Наші послуги</h2>
+      <ul>
+        <li>🔁 Заміна шин</li>
+        <li>⚖️ Балансування</li>
+        <li>🛠 Ремонт проколів</li>
+        <li>📦 Сезонне зберігання</li>
+      </ul>
+    </section>
 
-        <div class="flex items-center space-x-4">
-            <!-- Іконки: Запис, Зв'язок, Зміна теми -->
-            <a href="#" class="text-custom-accent text-xl hover:text-custom-accent-darker transition-colors" title="Записатися">
-                <i class="fas fa-calendar-alt"></i>
-            </a>
-            <a href="#" class="text-custom-accent text-xl hover:text-custom-accent-darker transition-colors" title="Зв'язатися з нами">
-                <i class="fas fa-phone-alt"></i>
-            </a>
-            <!-- Перемикач теми -->
-            <button id="theme-toggle" class="focus:outline-none text-custom-accent hover:text-custom-accent-darker text-xl" title="Змінити тему">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </header>
+    <section class="ios-section" id="appointment">
+      <h2>Запис онлайн</h2>
+      <form>
+        <input type="text" placeholder="Ваше ім’я" required />
+        <input type="tel" placeholder="Телефон" required />
+        <input type="datetime-local" required />
+        <button type="submit">Записатись</button>
+      </form>
+    </section>
 
-    <!-- Main Content -->
-    <main class="flex-grow container mx-auto p-6 md:p-10 my-8 rounded-2xl">
+    <section class="ios-section" id="location">
+      <h2>Ми на карті</h2>
+      <iframe src="https://maps.google.com/maps?q=Київ&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+    </section>
 
-        <!-- Home Section (empty for now, but good for navigation) -->
-        <section id="home" class="mb-16 min-h-[300px] flex items-center justify-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-secondary-text-color">Ласкаво просимо!</h2>
-        </section>
+    <section class="ios-section" id="contacts">
+      <h2>Контакти</h2>
+      <p>📞 +38 (097) 000-00-00</p>
+      <p>📧 shynomontazh@example.com</p>
+    </section>
+  </main>
 
-        <!-- Branches Section -->
-        <section id="branches" class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Наші філіали</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Філіал на вул. Шевченка, 10</h3>
-                    <p class="text-secondary-text-color mb-2"><i class="fas fa-clock mr-2"></i>Пн-Сб: 9:00 - 19:00</p>
-                    <p class="text-secondary-text-color mb-2"><i class="fas fa-phone mr-2"></i>+380 44 123 4567</p>
-                    <a href="https://maps.app.goo.gl/example1" target="_blank" class="text-custom-accent hover:underline mt-2 inline-block">
-                        <i class="fas fa-map-marker-alt mr-2"></i>Показати на мапі
-                    </a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Філіал на просп. Перемоги, 25</h3>
-                    <p class="text-secondary-text-color mb-2"><i class="fas fa-clock mr-2"></i>Пн-Нд: 8:00 - 20:00</p>
-                    <p class="text-secondary-text-color mb-2"><i class="fas fa-phone mr-2"></i>+380 44 765 4321</p>
-                    <a href="https://maps.app.goo.gl/example2" target="_blank" class="text-custom-accent hover:underline mt-2 inline-block">
-                        <i class="fas fa-map-marker-alt mr-2"></i>Показати на мапі
-                    </a>
-                </div>
-                <!-- Add more branches as needed -->
-            </div>
-            <div class="mt-8 text-center">
-                <button class="btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:shadow-lg transition-all">
-                    Знайти найближчий філіал
-                </button>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer py-6 px-6 text-center text-secondary-text-color border-t border-gray-200 dark:border-gray-700">
-        <p>&copy; 2025 Шиномонтаж. Усі права захищені.</p>
-        <div class="flex justify-center space-x-4 mt-3">
-            <a href="#" class="text-secondary-text-color hover:text-custom-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-secondary-text-color hover:text-custom-accent transition-colors"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-secondary-text-color hover:text-custom-accent transition-colors"><i class="fab fa-telegram-plane"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
-
-            // Function to apply the theme
-            function applyTheme(theme) {
-                if (theme === 'dark') {
-                    body.classList.add('dark-theme');
-                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for dark theme
-                } else {
-                    body.classList.remove('dark-theme');
-                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for light theme
-                }
-            }
-
-            // Check saved theme in localStorage on page load
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else {
-                // If no theme is saved, check system settings
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    applyTheme('dark');
-                } else {
-                    applyTheme('light');
-                }
-            }
-
-            // Event handler for theme toggle
-            themeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-theme')) {
-                    applyTheme('light');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    applyTheme('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
-
-            // Event handler for system theme change (for automatic switching)
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-                if (!localStorage.getItem('theme')) { // Only if user hasn't manually selected a theme
-                    applyTheme(event.matches ? 'dark' : 'light');
-                }
-            });
-        });
-    </script>
+  <footer class="ios-footer">
+    <p>&copy; 2025 Шиномонтаж 24/7</p>
+  </footer>
 </body>
 </html>
