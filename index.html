@@ -20,10 +20,9 @@
         <h1 class="text-2xl font-semibold text-primary">Шиномонтаж</h1>
         <div class="flex items-center space-x-4">
             <nav class="hidden md:flex space-x-6">
-                <a href="#home" class="text-lg font-medium hover:text-primary transition-colors">Головна</a>
-                <a href="#services" class="text-lg font-medium hover:text-primary transition-colors">Послуги</a>
+                <!-- Залишаємо посилання, але вони поки що не ведуть на інші секції -->
                 <a href="#branches" class="text-lg font-medium hover:text-primary transition-colors">Філіали</a>
-                <a href="#contact" class="text-lg font-medium hover:text-primary transition-colors">Контакти</a>
+                <!-- Інші посилання можна додати пізніше -->
             </nav>
             <button id="theme-toggle" class="focus:outline-none">
                 <i class="fas fa-moon"></i> <!-- Moon icon by default (dark theme) -->
@@ -33,93 +32,6 @@
 
     <!-- Main Content -->
     <main class="flex-grow container mx-auto p-6 md:p-10 my-8 rounded-2xl">
-
-        <!-- Home Section -->
-        <section id="home" class="mb-16">
-            <div class="text-center mb-10">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Ваш надійний партнер на дорозі</h2>
-                <p class="text-lg md:text-xl text-secondary-text-color max-w-3xl mx-auto">
-                    Професійний шиномонтаж, балансування та ремонт шин для вашого автомобіля. Швидко, якісно, надійно.
-                </p>
-                <button class="btn-primary py-3 px-8 rounded-full text-xl font-semibold mt-6 shadow-md hover:shadow-lg transition-all">
-                    Записатися онлайн
-                </button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card text-center">
-                    <i class="fas fa-wrench text-primary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2">Швидкий Сервіс</h3>
-                    <p class="text-secondary-text-color">Ми цінуємо ваш час і забезпечуємо оперативне обслуговування.</p>
-                </div>
-                <div class="card text-center">
-                    <i class="fas fa-star text-primary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2">Гарантія Якості</h3>
-                    <p class="text-secondary-text-color">Використовуємо лише сучасне обладнання та якісні матеріали.</p>
-                </div>
-                <div class="card text-center">
-                    <i class="fas fa-map-marker-alt text-primary text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-semibold mb-2">Зручне Розташування</h3>
-                    <p class="text-secondary-text-color">Наші філіали розташовані по всьому місту для вашої зручності.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Наші послуги</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Шиномонтаж</h3>
-                    <p class="text-secondary-text-color mb-4">Повний комплекс робіт із заміни та встановлення шин.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Демонтаж/монтаж колеса</li>
-                        <li>Зняття/встановлення шини</li>
-                        <li>Балансування</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Балансування коліс</h3>
-                    <p class="text-secondary-text-color mb-4">Точне балансування для комфортної та безпечної їзди.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Комп'ютерне балансування</li>
-                        <li>Перевірка геометрії</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Ремонт проколів</h3>
-                    <p class="text-secondary-text-color mb-4">Професійний ремонт шин будь-якої складності.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Ремонт бокових порізів</li>
-                        <li>Усунення проколів</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Зберігання шин</h3>
-                    <p class="text-secondary-text-color mb-4">Надійне сезонне зберігання ваших шин.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Оптимальні умови зберігання</li>
-                        <li>Доставка до філіалу</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Правка дисків</h3>
-                    <p class="text-secondary-text-color mb-4">Відновлення геометрії легкосплавних та сталевих дисків.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Видалення деформацій</li>
-                        <li>Відновлення цілісності</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-2">Діагностика</h3>
-                    <p class="text-secondary-text-color mb-4">Комплексна діагностика стану шин та дисків.</p>
-                    <ul class="list-disc list-inside text-secondary-text-color">
-                        <li>Огляд на пошкодження</li>
-                        <li>Рекомендації фахівця</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <!-- Branches Section -->
         <section id="branches" class="mb-16">
@@ -147,30 +59,6 @@
                 <button class="btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:shadow-lg transition-all">
                     Знайти найближчий філіал
                 </button>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Зв'яжіться з нами</h2>
-            <div class="max-w-xl mx-auto card p-8">
-                <form>
-                    <div class="mb-4">
-                        <label for="name" class="block text-secondary-text-color text-sm font-medium mb-2">Ваше ім'я</label>
-                        <input type="text" id="name" name="name" class="input-field w-full" placeholder="Введіть ваше ім'я">
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-secondary-text-color text-sm font-medium mb-2">Ваш Email</label>
-                        <input type="email" id="email" name="email" class="input-field w-full" placeholder="Введіть ваш email">
-                    </div>
-                    <div class="mb-6">
-                        <label for="message" class="block text-secondary-text-color text-sm font-medium mb-2">Ваше повідомлення</label>
-                        <textarea id="message" name="message" rows="5" class="input-field w-full" placeholder="Напишіть ваше повідомлення"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary w-full py-3 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg transition-all">
-                        Надіслати повідомлення
-                    </button>
-                </form>
             </div>
         </section>
 
