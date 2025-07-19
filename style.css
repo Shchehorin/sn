@@ -166,4 +166,46 @@ iframe {
   fill: #fff;  /* <-- Для підтримки SVG fill */
 }
 
+.locations {
+  padding: 1rem;
+  background-color: #2c2c2e;
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #3a3a3c;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.location-text strong {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.location-text span {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.location-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-circle {
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
 
