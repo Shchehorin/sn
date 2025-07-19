@@ -144,4 +144,15 @@ iframe {
     height: 20px;
   }
 }
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-box .logo-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+}
 
