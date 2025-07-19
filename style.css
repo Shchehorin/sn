@@ -156,5 +156,14 @@ iframe {
   stroke: #fff;
   flex-shrink: 0;
 }
+.header-icons .header-icon {
+  width: 1em;
+  height: 1em;
+  font-size: 1.1rem;
+  display: block;
+  transition: transform 0.2s ease;
+  color: #fff; /* <-- Заставляє іконки бути білими */
+  fill: #fff;  /* <-- Для підтримки SVG fill */
+}
 
 
