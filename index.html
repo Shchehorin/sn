@@ -1,16 +1,238 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHCHHRN — Мій сайт</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шиномонтаж | iOS Стиль</title>
+    <!-- Підключення Tailwind CSS з CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Підключення Font Awesome для іконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Підключення шрифту Inter (аналог San Francisco для веб) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Підключення зовнішнього CSS файлу -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Привіт!</h1>
-  <p>Це мій перший сайт на GitHub Pages</p>
-  <button onclick="sayHello()">Натисни мене</button>
-  <p id="output"></p>
-  <script src="script.js"></script>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="header shadow-sm py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
+        <h1 class="text-2xl font-semibold text-primary">Шиномонтаж</h1>
+        <div class="flex items-center space-x-4">
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="text-lg font-medium hover:text-primary transition-colors">Головна</a>
+                <a href="#services" class="text-lg font-medium hover:text-primary transition-colors">Послуги</a>
+                <a href="#branches" class="text-lg font-medium hover:text-primary transition-colors">Філіали</a>
+                <a href="#contact" class="text-lg font-medium hover:text-primary transition-colors">Контакти</a>
+            </nav>
+            <button id="theme-toggle" class="focus:outline-none">
+                <i class="fas fa-moon"></i> <!-- Moon icon by default (dark theme) -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto p-6 md:p-10 my-8 rounded-2xl">
+
+        <!-- Home Section -->
+        <section id="home" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Ваш надійний партнер на дорозі</h2>
+                <p class="text-lg md:text-xl text-secondary-text-color max-w-3xl mx-auto">
+                    Професійний шиномонтаж, балансування та ремонт шин для вашого автомобіля. Швидко, якісно, надійно.
+                </p>
+                <button class="btn-primary py-3 px-8 rounded-full text-xl font-semibold mt-6 shadow-md hover:shadow-lg transition-all">
+                    Записатися онлайн
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card text-center">
+                    <i class="fas fa-wrench text-primary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Швидкий Сервіс</h3>
+                    <p class="text-secondary-text-color">Ми цінуємо ваш час і забезпечуємо оперативне обслуговування.</p>
+                </div>
+                <div class="card text-center">
+                    <i class="fas fa-star text-primary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Гарантія Якості</h3>
+                    <p class="text-secondary-text-color">Використовуємо лише сучасне обладнання та якісні матеріали.</p>
+                </div>
+                <div class="card text-center">
+                    <i class="fas fa-map-marker-alt text-primary text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-2">Зручне Розташування</h3>
+                    <p class="text-secondary-text-color">Наші філіали розташовані по всьому місту для вашої зручності.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Наші послуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Шиномонтаж</h3>
+                    <p class="text-secondary-text-color mb-4">Повний комплекс робіт із заміни та встановлення шин.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Демонтаж/монтаж колеса</li>
+                        <li>Зняття/встановлення шини</li>
+                        <li>Балансування</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Балансування коліс</h3>
+                    <p class="text-secondary-text-color mb-4">Точне балансування для комфортної та безпечної їзди.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Комп'ютерне балансування</li>
+                        <li>Перевірка геометрії</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Ремонт проколів</h3>
+                    <p class="text-secondary-text-color mb-4">Професійний ремонт шин будь-якої складності.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Ремонт бокових порізів</li>
+                        <li>Усунення проколів</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Зберігання шин</h3>
+                    <p class="text-secondary-text-color mb-4">Надійне сезонне зберігання ваших шин.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Оптимальні умови зберігання</li>
+                        <li>Доставка до філіалу</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Правка дисків</h3>
+                    <p class="text-secondary-text-color mb-4">Відновлення геометрії легкосплавних та сталевих дисків.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Видалення деформацій</li>
+                        <li>Відновлення цілісності</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Діагностика</h3>
+                    <p class="text-secondary-text-color mb-4">Комплексна діагностика стану шин та дисків.</p>
+                    <ul class="list-disc list-inside text-secondary-text-color">
+                        <li>Огляд на пошкодження</li>
+                        <li>Рекомендації фахівця</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branches Section -->
+        <section id="branches" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Наші філіали</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Філіал на вул. Шевченка, 10</h3>
+                    <p class="text-secondary-text-color mb-2"><i class="fas fa-clock mr-2"></i>Пн-Сб: 9:00 - 19:00</p>
+                    <p class="text-secondary-text-color mb-2"><i class="fas fa-phone mr-2"></i>+380 44 123 4567</p>
+                    <a href="https://maps.app.goo.gl/example1" target="_blank" class="text-primary hover:underline mt-2 inline-block">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Показати на мапі
+                    </a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-2">Філіал на просп. Перемоги, 25</h3>
+                    <p class="text-secondary-text-color mb-2"><i class="fas fa-clock mr-2"></i>Пн-Нд: 8:00 - 20:00</p>
+                    <p class="text-secondary-text-color mb-2"><i class="fas fa-phone mr-2"></i>+380 44 765 4321</p>
+                    <a href="https://maps.app.goo.gl/example2" target="_blank" class="text-primary hover:underline mt-2 inline-block">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Показати на мапі
+                    </a>
+                </div>
+                <!-- Add more branches as needed -->
+            </div>
+            <div class="mt-8 text-center">
+                <button class="btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-md hover:shadow-lg transition-all">
+                    Знайти найближчий філіал
+                </button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Зв'яжіться з нами</h2>
+            <div class="max-w-xl mx-auto card p-8">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-secondary-text-color text-sm font-medium mb-2">Ваше ім'я</label>
+                        <input type="text" id="name" name="name" class="input-field w-full" placeholder="Введіть ваше ім'я">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-secondary-text-color text-sm font-medium mb-2">Ваш Email</label>
+                        <input type="email" id="email" name="email" class="input-field w-full" placeholder="Введіть ваш email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-secondary-text-color text-sm font-medium mb-2">Ваше повідомлення</label>
+                        <textarea id="message" name="message" rows="5" class="input-field w-full" placeholder="Напишіть ваше повідомлення"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full py-3 rounded-lg text-lg font-semibold shadow-md hover:shadow-lg transition-all">
+                        Надіслати повідомлення
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-6 px-6 text-center text-secondary-text-color border-t border-gray-200 dark:border-gray-700">
+        <p>&copy; 2025 Шиномонтаж. Усі права захищені.</p>
+        <div class="flex justify-center space-x-4 mt-3">
+            <a href="#" class="text-secondary-text-color hover:text-primary transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-secondary-text-color hover:text-primary transition-colors"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-secondary-text-color hover:text-primary transition-colors"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Function to apply the theme
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    body.classList.add('dark-theme');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for dark theme
+                } else {
+                    body.classList.remove('dark-theme');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for light theme
+                }
+            }
+
+            // Check saved theme in localStorage on page load
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                // If no theme is saved, check system settings
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    applyTheme('dark');
+                } else {
+                    applyTheme('light');
+                }
+            }
+
+            // Event handler for theme toggle
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-theme')) {
+                    applyTheme('light');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    applyTheme('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // Event handler for system theme change (for automatic switching)
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                if (!localStorage.getItem('theme')) { // Only if user hasn't manually selected a theme
+                    applyTheme(event.matches ? 'dark' : 'light');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
