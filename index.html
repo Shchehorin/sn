@@ -26,55 +26,35 @@
     </script>
     <!-- Підключення Font Awesome для іконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Підключення шрифту Inter (якщо CDN Tailwind не впорається, хоча він вже в конфігурації) -->
+    <!-- Підключення шрифту Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Підключення зовнішнього CSS файлу -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- Header - Mobile-first design: Hamburger menu visible by default, desktop nav hidden -->
-    <!-- Додано клас 'glass-header' для ефекту скла -->
-    <header class="header glass-header py-4 px-6 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
-        <!-- Логотип/назва компанії в боксі акцентного кольору -->
-        <a href="#home" class="flex items-center space-x-2 px-4 py-2 rounded-xl bg-custom-accent shadow-lg">
-            <i class="fas fa-clock text-white text-2xl"></i> <!-- Іконка годинника (як '24/7') -->
-            <span class="text-xl font-semibold text-white">Шиномонтаж</span> <!-- Назва сайту -->
+    <!-- Header - Компактний дизайн з іконками праворуч -->
+    <header class="header glass-header py-3 px-4 flex justify-between items-center sticky top-0 z-50 border-b border-gray-200 dark:border-gray-700">
+        <!-- Логотип/назва компанії в боксі акцентного кольору (темнішого з прозорістю) -->
+        <a href="#home" class="flex items-center space-x-1.5 px-3 py-1 rounded-lg bg-custom-accent-darker/70 shadow-md">
+            <i class="fas fa-clock text-white text-xl"></i> <!-- Іконка годинника -->
+            <span class="text-lg font-semibold text-white">Шиномонтаж</span> <!-- Назва сайту -->
         </a>
 
-        <div class="flex items-center space-x-6">
-            <!-- Іконки для десктопу (видимі на десктопі, приховані на мобільних) -->
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fas fa-phone-alt"></i></a>
-                <a href="#" class="text-custom-accent text-2xl hover:text-custom-accent-darker transition-colors"><i class="fas fa-calendar-alt"></i></a>
-            </div>
-
+        <div class="flex items-center space-x-4">
+            <!-- Іконки: Запис, Зв'язок, Зміна теми -->
+            <a href="#" class="text-custom-accent text-xl hover:text-custom-accent-darker transition-colors" title="Записатися">
+                <i class="fas fa-calendar-alt"></i>
+            </a>
+            <a href="#" class="text-custom-accent text-xl hover:text-custom-accent-darker transition-colors" title="Зв'язатися з нами">
+                <i class="fas fa-phone-alt"></i>
+            </a>
             <!-- Перемикач теми -->
-            <button id="theme-toggle" class="focus:outline-none text-custom-accent hover:text-custom-accent-darker text-2xl">
+            <button id="theme-toggle" class="focus:outline-none text-custom-accent hover:text-custom-accent-darker text-xl" title="Змінити тему">
                 <i class="fas fa-moon"></i>
-            </button>
-
-            <!-- Кнопка для мобільного меню (видима на мобільних, прихована на десктопі) -->
-            <button id="mobile-menu-button" class="md:hidden text-custom-accent text-2xl focus:outline-none">
-                <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
-
-    <!-- Мобільне меню (приховане за замовчуванням, показується JS) -->
-    <!-- Фон мобільного меню також зробимо напівпрозорим, щоб відповідати хедеру -->
-    <div id="mobile-menu" class="hidden md:hidden bg-header-bg-color/90 backdrop-blur-sm shadow-lg py-4 px-6 border-b border-gray-200 dark:border-gray-700">
-        <nav class="flex flex-col space-y-3">
-            <a href="#home" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2">Головна</a>
-            <a href="#branches" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2">Філіали</a>
-            <!-- Додаємо іконки до мобільного меню як посилання -->
-            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fab fa-instagram mr-2"></i>Instagram</a>
-            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fas fa-phone-alt mr-2"></i>Телефон</a>
-            <a href="#" class="text-lg font-medium text-custom-text hover:text-custom-accent transition-colors py-2 flex items-center space-x-2"><i class="fas fa-calendar-alt mr-2"></i>Запис</a>
-        </nav>
-    </div>
-
 
     <!-- Main Content -->
     <main class="flex-grow container mx-auto p-6 md:p-10 my-8 rounded-2xl">
@@ -129,8 +109,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const themeToggle = document.getElementById('theme-toggle');
             const body = document.body;
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
 
             // Function to apply the theme
             function applyTheme(theme) {
@@ -172,18 +150,6 @@
                 if (!localStorage.getItem('theme')) { // Only if user hasn't manually selected a theme
                     applyTheme(event.matches ? 'dark' : 'light');
                 }
-            });
-
-            // Mobile menu toggle
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Close mobile menu when a link is clicked
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
             });
         });
     </script>
